@@ -1,0 +1,58 @@
+<div class='container'>
+  <div class="col-xs-1"></div>
+  <div class="col-xs-10">
+    <p class = "title"><font class="title-font">新規登録</font></p>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "public/end_users/shared/error_messages", resource: resource %>
+        <table class="table table-hover table-inverse">
+          <tbody>
+            <tr>
+              <td>名前</td>
+              <td><font>(姓)</font><%= f.text_field :last_name, autofocus: true %></td>
+              <td><font>(名)</font><%= f.text_field :first_name, autofocus: true %></td>
+            </tr>
+            <tr>
+              <td>フリガナ</td>
+              <td><font>(セイ)</font><%= f.text_field :kana_last_name, autofocus: true %></td>
+              <td><font>(メイ)</font><%= f.text_field :kana_first_name, autofocus: true %></td>
+            </tr>
+            <tr>
+              <td>メールアドレス</td>
+              <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>郵便番号(ハイフンなし)</td>
+              <td><%= f.text_field :postal_code, autofocus: true %></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>住所</td>
+              <td><%= f.text_field :address, autofocus: true %></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>パスワード<% if @minimum_password_length %><em>(<%= @minimum_password_length %> 文字以上)</em><% end %></td>
+              <td><%= f.password_field :password, autocomplete: "new-password" %></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>パスワード(確認用)</td>
+              <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="actions">
+          <%= f.submit "新規登録",class: "button" %>
+        </div>
+      <% end %>
+
+    <div>
+      <h3>既に登録済みの方</h3>
+      <%= link_to 'こちら',new_end_user_session_path %><font> からログインしてください。</font>
+    </div>
+  </div>
+  <div class="col-xs-1"></div>
+</div>
