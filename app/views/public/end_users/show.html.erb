@@ -1,1 +1,40 @@
-<h1>エンドユーザのマイページです</h1>
+<p class = "caption"><font class = "caption-font">マイページ<font></p>
+<div class="mypage">
+	<font class="mypage-information">登録情報</font>
+	<%= link_to "編集する",edit_end_user_path(current_end_user.id), class: "button" %>
+	<%= link_to "パスワードを変更する",'#', class: "button" %>
+	<table border="3" class="personal-info">
+	    <tr>
+	      <td>氏名</td>
+	      <td><%= @user.last_name %><%=@user.first_name %></td>
+	    </tr>
+	    <tr>
+	      <td>カナ</td>
+	      <td><%= @user.kana_last_name %><%=@user.kana_first_name %></td>
+	    </tr>
+	    <tr>
+	      <td>郵便番号</td>
+	      <td><%= @user.postal_code %></td>
+	    </tr>
+	    <tr>
+	      <td>住所</td>
+	      <td><%= @user.address %></td>
+	    </tr>
+	    <tr>
+	      <td>電話番号</td>
+	      <td><%= @user.phone_number %></td>
+	    </tr>
+	    <tr>
+	      <td>メールアドレス</td>
+	      <td><%= @user.email %></td>
+	    </tr>
+ 	</table>
+ 	<div class="shipping-address">
+	 	<font class="mypage-information">配送先</font>
+	 	<%= link_to "一覧を見る","#",class: "button mypage-info" %>
+	</div>
+	 <div class="order-history">
+	 	<font class="mypage-information">注文履歴</font>
+	 	<%= link_to "一覧を見る","#",class: "button" %>
+    </div>
+</div>

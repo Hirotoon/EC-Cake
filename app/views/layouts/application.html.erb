@@ -25,7 +25,7 @@
                 <li><%= link_to "ログアウト", destroy_end_user_session_path,class: "glyphicon glyphicon-log-out logout", method: :delete %></li>
             <% elsif signed_in? %>
                 <li><%= link_to "商品一覧",'#', class: "glyphicon glyphicon-link about" %></li>
-                <li><%= link_to "会員一覧",'#', class: "glyphicon glyphicon-user users" %></li>
+                <li><%= link_to "会員一覧",admin_end_users_path, class: "glyphicon glyphicon-user users" %></li>
                 <li><%= link_to "注文履歴一覧",'#', class: "glyphicon glyphicon-book books" %></li>
                 <li><%= link_to "ジャンル一覧",'#', class: "glyphicon glyphicon-book books" %></li>
                 <li><%= link_to "ログアウト",destroy_admin_admin_session_path,class: "glyphicon glyphicon-log-out logout", method: :delete %></li> 
@@ -38,8 +38,10 @@
         </nav>
       </div>
     </header>
-    <div class = "yield">
-      <%= yield %>
+    <div class = "container">
+      <div class = "yield">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

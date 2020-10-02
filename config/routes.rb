@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 	      passwords: 'admin/admins/passwords'
 	    }
     	root 'admins#top'
+    	resources :end_users, only:[:index]
 
 	end
 
@@ -16,7 +17,12 @@ Rails.application.routes.draw do
 	        passwords: 'public/end_users/passwords'
 	  	}
 	  	root "end_users#top"
-	  	resources :end_users
+	  	resources :end_users do
+	  		collection do
+	  			get 'unsubscribe'
+	  			patch 'withdraw'
+	  		end
+	  	end
 	end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

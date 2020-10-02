@@ -8,7 +8,7 @@ class CreateEndUsers < ActiveRecord::Migration[5.2]
       t.string "postal_code"
       t.string "address"
       t.string "phone_number"
-      t.boolean "is_active_member_status"
+      t.boolean "is_active_member_status",default: true
       t.datetime "deleted_at"
       t.timestamps
     end
