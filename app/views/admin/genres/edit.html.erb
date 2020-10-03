@@ -1,0 +1,18 @@
+<div class="col-xs-3"></div>
+<div class="col-xs-6">
+    <p style="font-size:25px;margin-top:50px;"><font style="background-color: silver;">ジャンル一覧・追加</font></p>
+    <div style="margin:20px;">
+        <%= form_for [:admin, @genre] do |f| %>
+                    <label>ジャンル</label>
+                    <%= f.text_field :name, placeholder:"" %>
+                    <label>
+                    <%= f.radio_button :is_active,true %>有効
+                    </label>
+                    <label>
+                    <%= f.radio_button :is_active,false%>無効
+                    </label>
+                    <%= f.submit "変更を保存する" ,class:"button"%>
+        <% end %>
+    </div>
+</div>
+<div class="col-xs-3"></div>

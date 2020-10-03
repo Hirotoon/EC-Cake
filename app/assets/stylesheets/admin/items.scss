@@ -1,0 +1,23 @@
+// Place all the styles related to the admin/items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.item-form{
+	margin-top:50px;
+}
+.field{
+	margin-bottom:20px;
+}
+
+.yen{
+	margin-left: 10px;
+    font-size: 20px;
+}
+
+.button-circle{
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 50px;
+}

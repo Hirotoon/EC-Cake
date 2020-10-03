@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 	    }
     	root 'admins#top'
     	resources :end_users, only:[:index]
-
+    	resources :items, only:[:index, :show, :edit, :new, :create, :update]
+    	resources :genres, only:[:index, :edit, :create, :update]
 	end
 
 	scope module: :public do
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
 	  			patch 'withdraw'
 	  		end
 	  	end
+	  	resources :items, only:[:index, :show]
 	end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
