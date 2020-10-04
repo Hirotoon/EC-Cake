@@ -1,0 +1,49 @@
+// Place all the styles related to the public/cart_items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cart_tr, .cart_tr > th , .cart_tr > td{
+  border:solid 1px;
+}
+.delete-button{
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: red;/*ボタン色*/
+  color: #fff;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.delete-button:active{
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+.green-button{
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: green;/*ボタン色*/
+  color: #fff;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.green-button:active{
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+.destroy_all-p{
+	margin-left:68%;
+	margin-bottom:20px;
+}
+
+.td-line{
+	line-height: 5;
+}
+
+.cart_item_up{
+	width:120px;
+	padding-top:25px;
+}

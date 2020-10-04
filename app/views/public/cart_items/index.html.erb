@@ -1,0 +1,50 @@
+<div class="col-xs-2"></div>
+<div class="col-xs-8 ">
+	<p class = "caption"><font class="caption-font">ショッピングカート</font></p>
+	<% if @cart_items==[] %>
+		<h3>カート内に商品は存在しません</h3>
+	<% else %> 
+		<p class="destroy_all-p">
+			<%= link_to "カートを空にする", destroy_all_cart_items_path,method: :delete,data: {confirm: "カート内商品を全て削除してよろしいですか？"},class: "delete-button"%>
+		</p>
+		<table class="table table-hover table-inverse">
+			<thead>
+			    <tr class="cart_tr"> 
+			        <th>商品名</th>
+			        <th>単価(税込)</th>
+			        <th>個数</th>
+			        <th>小計</th>
+			        <th></th>
+			    </tr>
+			</thead>
+			<% @cart_items.each do |cart_item| %>
+				  <tbody>
+					<tr class="cart_tr">
+						<td class = "td-line"style="line-height: 5;"><%=attachment_image_tag cart_item.item, :image,format: 'jpeg', fallback: "no_image.jpg",size: "90x60" %><%= cart_item.item.name %></td>
+						<td class = "td-line"style="line-height: 5;"><%= (cart_item.item.price_excluding_price*1.1).to_int %></td>
+						<td class ="cart_item_up"style="width:120px;padding-top:25px;">
+							<%= form_with model: [cart_item] do |f| %>
+								<%= f.text_field :amount, placeholder:cart_item.amount,:size => "3*30" %>
+								<%= f.submit "変更" ,class:"button"%>
+							<% end %>
+						</td>
+						<td class ="td-line"style="line-height: 5;"><%= (cart_item.item.price_excluding_price*cart_item.amount*1.1).to_int %></td>
+						<% @total_price+=(cart_item.item.price_excluding_price*cart_item.amount*1.1).to_int %>
+						<td style="width:120px; padding-top:25px;padding-left:15px;"><%= link_to "削除する",cart_item_path(cart_item.id),method: :delete,class: "delete-button"%></td>
+					</tr>
+				  </tbody>
+			<% end %>
+		</table>
+		<div class="clearfix">
+			<table style=" display:float; float:right;">
+			  <tr>
+			    <th style="border:solid 2px;padding:15px;">合計金額</th><td style="border:solid 2px;padding:15px;"><%= @total_price %></td>
+			  </tr>
+			</table>
+		</div>
+		<%= link_to "情報入力に進む","#",class: "green-button"%>
+	<% end %>
+	<%= link_to "買い物を続ける",root_path,class: "button"%>
+</div>
+<div class="col-xs-2"></div>
+

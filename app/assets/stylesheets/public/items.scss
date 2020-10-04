@@ -5,3 +5,32 @@
 	display: flex;
     flex-direction: row;
 }
+
+.name{
+	font-size:25px;
+}
+
+.description{
+	font-size:15px;
+}
+
+.yen{
+	margin-left:0px;
+}
+
+.item_price{
+	margin-bottom:20px;
+}
+
+.cart_items_form{
+	display:flex;
+	flex-direction: row;
+}
+
+.cart-button{
+	margin-left:20px;
+}
+
+.amount-select{
+	margin-left:40px;
+}
